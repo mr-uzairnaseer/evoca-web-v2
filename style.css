@@ -691,7 +691,8 @@ a {
 
 /* Tighter grid gap inside the reach section */
 .campaign-reach .campaign-grid {
-    gap: 40px;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 120px;
 }
 
 /* Cap the visual container height in the reach section */
@@ -745,8 +746,8 @@ a {
     max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    gap: 240px;
+    grid-template-columns: 2.8fr 1fr;
+    gap: 100px;
     align-items: center;
 }
 

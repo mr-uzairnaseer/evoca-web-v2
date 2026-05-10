@@ -742,7 +742,7 @@ a {
 
 .campaign-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .header-main {
@@ -750,7 +750,7 @@ a {
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -2px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -765,7 +765,7 @@ a {
 .campaign-banner {
     width: 100%;
     max-width: 1300px;
-    margin: 25px auto 10px;
+    margin: 10px auto 0;
     border-radius: 40px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);

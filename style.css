@@ -745,8 +745,8 @@ a {
     max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2.8fr 1fr;
-    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
 }
 
@@ -832,9 +832,9 @@ a {
     position: relative;
     height: min(850px, 70vh);
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 0;
 }
 
 .campaign-info {

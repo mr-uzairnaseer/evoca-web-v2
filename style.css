@@ -1295,7 +1295,7 @@ a {
 
 /* Footer Styles */
 .footer {
-    padding: 20px 8% 0;
+    padding: 20px 8% 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;

@@ -477,6 +477,12 @@
 
     </div><!-- /#snapContainer -->
 
+    <div class="section-scrollbar" id="sectionScrollbar">
+        <div class="sb-track" id="sbTrack">
+            <div class="sb-thumb" id="sbThumb"></div>
+        </div>
+    </div>
+
     <script>
         const navbar = document.querySelector('.navbar');
 
@@ -553,6 +559,23 @@
                 scrollTop.classList.toggle('visible', idx > 0);
             }
 
+            // ── Custom Scrollbar ──────────────────────────────────────
+            const sbThumb = document.getElementById('sbThumb');
+            const sbTrack = document.getElementById('sbTrack');
+            function updateScrollbar(idx) {
+                if (!sbThumb) return;
+                const pct = 100 / TOTAL;
+                sbThumb.style.height = pct + '%';
+                sbThumb.style.top = (idx * pct) + '%';
+            }
+            if (sbTrack) {
+                sbTrack.addEventListener('click', (e) => {
+                    const rect = sbTrack.getBoundingClientRect();
+                    const y = (e.clientY - rect.top) / rect.height;
+                    goTo(Math.min(Math.floor(y * TOTAL), TOTAL - 1));
+                });
+            }
+
             function triggerReveals(sec) {
                 sec.querySelectorAll('.reveal:not(.active)').forEach(el => {
                     setTimeout(() => el.classList.add('active'), 80);
@@ -563,6 +586,7 @@
                 if (isAnimating || next === current || next < 0 || next >= TOTAL) return;
                 isAnimating = true;
                 clearTimeout(finishTimer);
+                updateScrollbar(next);
 
                 const dir    = next > current ? 1 : -1;
                 const outSec = sections[current];
@@ -583,7 +607,7 @@
                     inSec.style.transform      = 'translateY(0)';
                     inSec.style.pointerEvents  = 'all';
                     current = next; isAnimating = false;
-                    updateNavbar(current); triggerReveals(inSec);
+                    updateNavbar(current); updateScrollbar(current); triggerReveals(inSec);
                     return;
                 }
 
@@ -658,6 +682,7 @@
             });
 
             updateNavbar(0);
+            updateScrollbar(0);
             triggerReveals(sections[0]);
         })();
     </script>

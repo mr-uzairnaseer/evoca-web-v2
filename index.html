@@ -274,7 +274,6 @@
     </a>
 
     </div><!-- /#snapContainer -->
-    <div id="scrollProxy" style="height: 600vh; position: absolute; top: 0; left: 0; width: 1px; pointer-events: none; z-index: -1;"></div>
 
     <script>
         // ── Navbar scroll tint ────────────────────────────────────────
@@ -415,6 +414,11 @@
                 sec.style.pointerEvents = i === 0 ? 'all'              : 'none';
             });
 
+            // Sync scrollbar to top on load
+            if (window.innerWidth > 768) {
+                window.scrollTo(0, 0);
+            }
+
             // ── Scroll to Top button ─────────────────────────────────
             const scrollTop = document.getElementById('scrollTop');
             scrollTop.addEventListener('click', (e) => {
@@ -501,22 +505,26 @@
                     isAnimating = false;
                     updateNavbar(current);
                     triggerReveals(inSec);
-                    // Sync native scrollbar
-                    window.scrollTo({ top: current * window.innerHeight, behavior: 'instant' });
-                }, DUR + 500); // Increased cooldown from 50ms to 500ms to prevent momentum-based double-triggering
+
+                    // Sync native scrollbar position without triggering the listener
+                    isSyncing = true;
+                    window.scrollTo(0, current * window.innerHeight);
+                    setTimeout(() => { isSyncing = false; }, 50);
+                }, DUR + 100); 
             }
 
             // ── Native Scroll Sync ────────────────────────────────────
             let isSyncing = false;
             window.addEventListener('scroll', () => {
                 if (isAnimating || isSyncing || window.innerWidth <= 768) return;
-                isSyncing = true;
-                const newIdx = Math.round(window.scrollY / window.innerHeight);
-                if (newIdx !== current) {
-                    goTo(newIdx);
+                
+                const scrollPos = window.scrollY;
+                const targetIdx = Math.round(scrollPos / window.innerHeight);
+                
+                if (targetIdx !== current && targetIdx >= 0 && targetIdx < TOTAL) {
+                    goTo(targetIdx);
                 }
-                setTimeout(() => { isSyncing = false; }, 100);
-            });
+            }, { passive: true });
 
             // ── Wheel ─────────────────────────────────────────────────
             window.addEventListener('wheel', (e) => {

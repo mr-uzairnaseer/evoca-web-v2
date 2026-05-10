@@ -1253,7 +1253,7 @@ a {
 
 /* Footer Styles */
 .footer {
-    padding: 10px 8% 5px;
+    padding: 20px 8% 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;
@@ -1294,6 +1294,25 @@ a {
 
 .footer-nav a:hover {
     color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.social-links a {
+    color: #5a6c7e;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 
@@ -1527,7 +1546,7 @@ a {
     }
 
     .footer {
-        padding: 15px 8% 8px;
+        padding: 30px 8% 15px;
     }
 
     .footer-container {

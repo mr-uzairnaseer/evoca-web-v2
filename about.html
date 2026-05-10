@@ -459,6 +459,13 @@
             </footer>
         </div>
 
+    <a href="#" class="scroll-top" id="scrollTop">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </a>
+
     </div><!-- /#snapContainer -->
 
     <script>
@@ -525,8 +532,16 @@
                 sec.style.pointerEvents = i === 0 ? 'all'              : 'none';
             });
 
+            // ── Scroll to Top button ─────────────────────────────────
+            const scrollTop = document.getElementById('scrollTop');
+            scrollTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                goTo(0);
+            });
+
             function updateNavbar(idx) {
                 navbar.classList.toggle('scrolled', idx > 0);
+                scrollTop.classList.toggle('visible', idx > 0);
             }
 
             function triggerReveals(sec) {

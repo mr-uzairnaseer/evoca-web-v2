@@ -742,7 +742,7 @@ a {
 
 .campaign-header {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .header-main {
@@ -778,7 +778,7 @@ a {
     height: auto;
     display: block;
     object-fit: cover;
-    margin-bottom: -4px;
+    margin-bottom: -30px;
     transition: none;
     /* Ensure no active effect */
 }
@@ -1295,7 +1295,7 @@ a {
 
 /* Footer Styles */
 .footer {
-    padding: 20px 8% 10px;
+    padding: 20px 8% 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;

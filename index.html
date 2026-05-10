@@ -274,6 +274,7 @@
     </a>
 
     </div><!-- /#snapContainer -->
+    <div id="scrollProxy" style="height: 600vh; position: absolute; top: 0; left: 0; width: 1px; pointer-events: none; z-index: -1;"></div>
 
     <script>
         // ── Navbar scroll tint ────────────────────────────────────────
@@ -500,8 +501,22 @@
                     isAnimating = false;
                     updateNavbar(current);
                     triggerReveals(inSec);
+                    // Sync native scrollbar
+                    window.scrollTo({ top: current * window.innerHeight, behavior: 'instant' });
                 }, DUR + 500); // Increased cooldown from 50ms to 500ms to prevent momentum-based double-triggering
             }
+
+            // ── Native Scroll Sync ────────────────────────────────────
+            let isSyncing = false;
+            window.addEventListener('scroll', () => {
+                if (isAnimating || isSyncing || window.innerWidth <= 768) return;
+                isSyncing = true;
+                const newIdx = Math.round(window.scrollY / window.innerHeight);
+                if (newIdx !== current) {
+                    goTo(newIdx);
+                }
+                setTimeout(() => { isSyncing = false; }, 100);
+            });
 
             // ── Wheel ─────────────────────────────────────────────────
             window.addEventListener('wheel', (e) => {

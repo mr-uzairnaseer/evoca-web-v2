@@ -1,6 +1,6 @@
 html.snap-page {
     scroll-snap-type: none;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -218,31 +218,30 @@ body {
     position: relative;
 }
 
-/* Custom Scrollbar (Global) */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #2a3a5a transparent;
-}
-
+/* Premium Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #2a3a5a;
+    background: #1a2a4a;
     border-radius: 20px;
-    border: 3px solid transparent;
-    background-clip: content-box;
+    border: 4px solid var(--bg-dark);
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-red);
-    background-clip: content-box;
+}
+
+/* Firefox Scrollbar Support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #1a2a4a var(--bg-dark);
 }
 
 

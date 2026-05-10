@@ -670,7 +670,7 @@ a {
 /* Campaign Visual System Section */
 .campaign-system {
     height: 100%;
-    padding: 60px 8% 20px;
+    padding: 40px 8% 20px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -724,7 +724,7 @@ a {
 .campaign-banner {
     width: 100%;
     max-width: 1300px;
-    margin: 25px auto 10px;
+    margin: 10px auto 10px;
     border-radius: 40px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);

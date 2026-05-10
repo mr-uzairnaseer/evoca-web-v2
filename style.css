@@ -66,6 +66,7 @@ html.snap-page {
 .snap-section[data-index="5"] {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
 }
 
 .snap-section[data-index="5"]>section,
@@ -1253,7 +1254,7 @@ a {
 
 /* Footer Styles */
 .footer {
-    padding: 20px 8% 10px;
+    padding: 15px 8% 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;
@@ -1527,7 +1528,7 @@ a {
     }
 
     .footer {
-        padding: 20px 8% 5px;
+        padding: 15px 8% 0;
     }
 
     .footer-container {
@@ -2675,7 +2676,7 @@ a {
 
     /* ── Footer ── */
     .footer {
-        padding: 15px 5% 5px;
+        padding: 10px 5% 0;
     }
 
     .footer-container {
@@ -2874,8 +2875,8 @@ a {
     }
 
     .footer {
-        padding-top: 20px;
-        padding-bottom: 5px;
+        padding-top: 15px;
+        padding-bottom: 0;
     }
 
     /* ── Distributors & Contact page header ── */

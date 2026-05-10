@@ -1253,7 +1253,7 @@ a {
 
 /* Footer Styles */
 .footer {
-    padding: 40px 8%;
+    padding: 20px 8%;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;
@@ -1527,7 +1527,7 @@ a {
     }
 
     .footer {
-        padding: 60px 8% 40px;
+        padding: 20px 8%;
     }
 
     .footer-container {
@@ -2675,7 +2675,7 @@ a {
 
     /* ── Footer ── */
     .footer {
-        padding: 30px 5%;
+        padding: 15px 5%;
     }
 
     .footer-container {
@@ -2868,10 +2868,14 @@ a {
     .campaign-reach,
     .signature-concept,
     .zero-section,
-    .footer,
     .about-content-section {
         padding-top: 70px;
         padding-bottom: 30px;
+    }
+
+    .footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     /* ── Distributors & Contact page header ── */

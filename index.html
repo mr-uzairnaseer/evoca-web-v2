@@ -463,6 +463,7 @@
 
                 isAnimating = true;
                 clearTimeout(finishTimer);
+                updateScrollbar(next);
 
                 const dir    = next > current ? 1 : -1;
                 const outSec = sections[current];
@@ -523,7 +524,6 @@
                     current     = next;
                     isAnimating = false;
                     updateNavbar(current);
-                    updateScrollbar(current);
                     triggerReveals(inSec);
                 }, DUR + 500); // Increased cooldown from 50ms to 500ms to prevent momentum-based double-triggering
             }

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="snap-page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evoca - Taste the rush</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="assets/Evoca Logo.png" alt="Evoca Logo" class="logo-img">
+            </div>
+            <nav class="nav-links">
+                <a href="#flavors">Flavors</a>
+                <a href="about.html">About Us</a>
+                <a href="distributors.html">Distributors</a>
+                <a href="contact.html">Contact US</a>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#" class="btn btn-primary buy-now">BUY ON TIKTOK &rarr;</a>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════
+         FULL-SCREEN SNAP SCROLL CONTAINER
+         Sections: 0=Hero, 1=Flavors, 2=Campaign, 3=Special, 4=Zero
+         ═══════════════════════════════════════════════ -->
+    <div id="snapContainer">
+
+        <!-- SECTION 0: Hero (marquee embedded at bottom) -->
+        <div class="snap-section" data-index="0">
+            <main class="hero">
+                <!-- Circular Can Carousel -->
+                <div class="hero-carousel" id="heroCarousel">
+                    <div class="carousel-stage">
+                        <div class="carousel-can" data-index="0">
+                            <img src="assets/hero/1.png" alt="Evoca Can 1">
+                        </div>
+                        <div class="carousel-can" data-index="1">
+                            <img src="assets/hero/2.png" alt="Evoca Can 2">
+                        </div>
+                        <div class="carousel-can" data-index="2">
+                            <img src="assets/hero/3.png" alt="Evoca Can 3">
+                        </div>
+                        <div class="carousel-can" data-index="3">
+                            <img src="assets/hero/4.png" alt="Evoca Can 4">
+                        </div>
+                    </div>
+                </div>
+                <!-- Dot Indicators removed -->
+                <!-- Side info: above buttons on mobile, absolute overlay on desktop -->
+                <div class="hero-sides-container">
+                    <div class="hero-side left">
+                        <div class="side-info-item">
+                            <h3>REAL FRUIT, REAL TASTE</h3>
+                            <p>Premium Quality Ingredients</p>
+                        </div>
+                        <div class="side-info-item">
+                            <h3>PURE, CLEAN REFRESHMENT</h3>
+                            <p>No Controversial Additives</p>
+                        </div>
+                    </div>
+                    <div class="hero-side right">
+                        <div class="side-info-item">
+                            <h3>INNOVATIVE FLAVOURS</h3>
+                            <p>Uniquely Crafted, Perfected Taste</p>
+                        </div>
+                        <div class="side-info-item">
+                            <h3>ETHICALLY PRODUCED</h3>
+                            <p>Vegan, and Vegetarian Friendly</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bottom-content">
+                    <div class="hero-badge reveal">Best Taste Money Can Ever Buy</div>
+                    <div class="hero-main-title reveal delay-1">
+                        <h1>Ultra <span class="highlight-red">Premium</span> Drink</h1>
+                        <span class="title-sub">Serving You Since 2003</span>
+                    </div>
+                    <div class="hero-actions reveal delay-2">
+                        <a href="#flavors" class="btn btn-primary buy-now">EXPLORE FLAVORS &rarr;</a>
+                        <a href="#" class="btn btn-outline">WATCH CAMPAIGN</a>
+                    </div>
+                </div>
+                <div class="hero-fade-overlay"></div>
+            </main>
+        </div>
+
+        <!-- SECTION 1: What's Special -->
+        <div class="snap-section snap-section--scroll" data-index="1">
+            <section class="signature-concept">
+                <div class="concept-grid">
+                    <div class="concept-left reveal">
+                        <span class="concept-tag">THERE IS NO ONE LIKE EVOCA</span>
+                        <h2 class="concept-heading">WHAT'S <span class="highlight-red">SPECIAL?</span></h2>
+                        <div class="concept-features">
+                            <div class="concept-feature">
+                                <div class="feature-icon">01</div>
+                                <div class="feature-text">
+                                    <h4>HERO BUILT FROM SPLASH FORMS</h4>
+                                    <p>Evoca drinks are crafted using only the finest ingredients, including natural fruit extracts, caffeine, and black seed extract.</p>
+                                </div>
+                            </div>
+                            <div class="concept-feature">
+                                <div class="feature-icon">02</div>
+                                <div class="feature-text">
+                                    <h4>PREMIUM TYPOGRAPHY BALANCE</h4>
+                                    <p>From refreshing Mango to the dynamic Cola, each flavour is formulated with high-quality ingredients to create an unforgettable taste experience.</p>
+                                </div>
+                            </div>
+                            <div class="concept-feature">
+                                <div class="feature-icon">03</div>
+                                <div class="feature-text">
+                                    <h4>UNIQUE FLAVOR STORYTELLING</h4>
+                                    <p>Evoca drinks are produced with sustainability in mind, using environmentally friendly practices to reduce our carbon footprint.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="concept-right">
+                        <div class="orbit-card">
+                            <div class="orbit-visual">
+                                <img src="assets/Group9.png" alt="Orbit Background" class="orbit-bg">
+                                <img src="assets/all.png" alt="Evoca Cans Range" class="orbit-can">
+                                <div class="orbit-label label-tl"><h5>CARBONATED WATER</h5></div>
+                                <div class="orbit-label label-tr"><h5>NATURAL FLAVOURS</h5></div>
+                                <div class="orbit-label label-bl"><h5>ETHICALLY PRODUCED</h5></div>
+                                <div class="orbit-label label-br"><h5>ENVIRONMENT FRIENDLY</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 2: Expanding Reach -->
+        <div class="snap-section" data-index="2">
+            <section class="campaign-system campaign-reach">
+                <div class="campaign-grid">
+                    <div class="campaign-left reveal">
+                        <h3 class="side-heading">Expanding <span class="highlight-blue">Reach</span></h3>
+                        <div class="feature-list">
+                            <div class="feature-card reveal delay-1">
+                                <h4>Expanding Across the UK</h4>
+                                <p>Evoca Drinks continues to grow its national footprint, now available through major distributors and supplying thousands of QSR and retail outlets across the UK.<br><br>We are actively expanding across Europe and beyond.</p>
+                            </div>
+                            <div class="feature-card reveal delay-2">
+                                <h4>Stock Evoca</h4>
+                                <p>Whether you are a wholesaler, distributor, restaurant group or independent retailer, Evoca Drinks offers a premium alternative your customers are actively seeking.<br><br>
+                                    <a href="contact.html" style="color: var(--primary-red); font-weight: 700;">Contact us</a> to discuss trade opportunities or visit the <a href="distributors.html" style="color: var(--primary-red); font-weight: 700;">distributors page</a>.<br><br>
+                                    Also available through online marketplaces, including TikTok Shop.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campaign-right">
+                        <div class="visual-container">
+                            <div class="ribbon ribbon-1"></div>
+                            <div class="ribbon ribbon-2"></div>
+                            <div class="straight-can">
+                                <img src="assets/EvocaStrawberry.png" alt="Evoca Strawberry">
+                            </div>
+                            <div class="particle p1"></div>
+                            <div class="particle p2"></div>
+                            <div class="particle p3"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 3: Flavours in Focus -->
+        <div class="snap-section snap-section--scroll" data-index="3">
+            <section class="campaign-system">
+                <div class="campaign-header reveal">
+                    <h2 class="header-main">ALL <span class="highlight-red">FLAVOURS</span> IN FOCUS</h2>
+                    <div class="campaign-banner reveal delay-1">
+                        <img src="assets/centralcans.png" alt="Evoca Cans Range" class="banner-img">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 4: Flavors -->
+        <div class="snap-section" data-index="4">
+            <section id="flavors" class="product-showcase">
+                <div class="showcase-container">
+                    <div class="pagination">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                        <span class="dot" data-index="3"></span>
+                        <span class="dot" data-index="4"></span>
+                    </div>
+                    <div class="product-image">
+                        <img src="assets/1.png" alt="Evoca Product" id="productImage">
+                    </div>
+                    <div class="product-info reveal">
+                        <span class="product-tag" id="productTag">Evoca Cola</span>
+                        <h2 class="product-heading" id="productHeading">CLASSIC TASTE<br>REIMAGINED</h2>
+                        <p class="product-description" id="productDesc">
+                            Our signature Cola blend features natural mineral water and a unique black seed extract for a bold, sophisticated profile.
+                            <br><br>
+                            Experience a refreshing twist on a timeless classic, crafted for those who appreciate premium quality and authentic ingredients.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 5: Zero + Footer (combined, scrollable) -->
+        <div class="snap-section snap-section--scroll" data-index="5">
+            <section id="zero" class="zero-section">
+                <div class="red-stripe"></div>
+                <div class="zero-container">
+                    <div class="zero-left reveal">
+                        <img src="assets/Zero.png" alt="Evoca Cola Zero" class="zero-can">
+                    </div>
+                    <div class="zero-right">
+                        <h2 class="zero-heading">START FROM<br>ZERO</h2>
+                        <p class="zero-text">
+                            Introducing Evoca Cola Zero, the perfect drink for those who crave the bold, refreshing taste of cola without the calories. With zero sugar and just 1 calorie per can, Evoca Cola Zero offers the same invigorating flavor you love, but without any compromises.<br><br>
+                            It's the ideal choice for those who want to stay energized and refreshed, all while keeping their calorie count in check.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <footer id="contact" class="footer">
+                <div class="footer-container">
+                    <div class="footer-left">
+                        <img src="assets/Evoca Logo.png" alt="Evoca Logo" class="footer-logo">
+                    </div>
+                    <div class="footer-center">
+                        <p>© 2025 Evoca Drinks. All rights reserved.</p>
+                    </div>
+                    <div class="footer-right">
+                        <nav class="footer-nav">
+                            <a href="#">INSTAGRAM</a>
+                            <a href="distributors.html">STOCKISTS</a>
+                            <a href="contact.html">CONTACT</a>
+                        </nav>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div><!-- /#snapContainer -->
+
+    <script>
+        // ── Navbar scroll tint ────────────────────────────────────────
+        const navbar = document.querySelector('.navbar');
+        // navbar tint is driven by snap engine below (section index > 0)
+
+        // ── Reveal animations (IntersectionObserver) ──────────────────
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ── Mouse glow ────────────────────────────────────────────────
+        const glow = document.createElement('div');
+        glow.className = 'mouse-glow';
+        Object.assign(glow.style, {
+            position:'fixed', width:'600px', height:'600px',
+            background:'radial-gradient(circle, rgba(227,30,43,0.05) 0%, transparent 70%)',
+            borderRadius:'50%', pointerEvents:'none', zIndex:'0',
+            transform:'translate(-50%,-50%)', transition:'opacity 0.5s ease'
+        });
+        document.body.appendChild(glow);
+        document.addEventListener('mousemove', e => { glow.style.left = e.clientX+'px'; glow.style.top = e.clientY+'px'; });
+        document.addEventListener('mouseenter', () => glow.style.opacity = '1');
+        document.addEventListener('mouseleave', () => glow.style.opacity = '0');
+
+        // ── Flavor Switcher ───────────────────────────────────────────
+        const flavors = [
+            { tag:"Evoca Cola",       heading:"CLASSIC TASTE<br>REIMAGINED",  desc:"Our signature Cola blend features natural mineral water and a unique black seed extract for a bold, sophisticated profile.<br><br>Experience a refreshing twist on a timeless classic, crafted for those who appreciate premium quality and authentic ingredients.", img:"assets/1.png" },
+            { tag:"Evoca Strawberry", heading:"FRUITY RUSH",                  desc:"Evoca Strawberry combines freshly pressed strawberry juice and premium ingredients for a naturally refreshing, authentic flavour.<br><br>Carefully crafted from real fruit and natural mineral water, it delivers a smooth texture, bold flavour, and revitalising refreshment wherever you are.", img:"assets/2.png" },
+            { tag:"Evoca Orange",     heading:"ISLAND REFRESHMENT",           desc:"Crisp, zesty, and full of life, our Orange flavor is made from the finest citrus extracts and crystal-clear spring water.<br><br>A bright and uplifting choice that delivers a natural citrus punch, keeping you refreshed and revitalized from the first sip to the last.", img:"assets/4.png" },
+            { tag:"Evoca Mango",      heading:"EVERY DROP<br>TROPICAL",       desc:"Savor the sun-ripened sweetness of exotic mangoes, perfectly balanced with our pure mineral water base.<br><br>A vibrant, refreshing escape that brings a burst of tropical energy to your day, with no artificial flavors or compromise.", img:"assets/3.png" },
+            { tag:"Evoca Cola Zero",  heading:"ZERO CALORIES",                desc:"Indulge in the full, rich taste of our Cola, now with zero calories. Infused with real kola nut and our exclusive black seed extract, Evoca Cola Zero offers all the bold, sophisticated flavours of the original, without the sugar.<br><br>Perfect for those who want the taste they love with none of the calories, Evoca Cola Zero delivers refreshment, energy, and flavour in every sip.", img:"assets/5.png" }
+        ];
+        const flavorDots    = document.querySelectorAll('.pagination .dot');
+        const productImage  = document.getElementById('productImage');
+        const productTag    = document.getElementById('productTag');
+        const productHeading= document.getElementById('productHeading');
+        const productDesc   = document.getElementById('productDesc');
+        flavorDots.forEach(dot => dot.addEventListener('click', () => updateFlavor(dot.getAttribute('data-index'))));
+        function updateFlavor(index) {
+            const f = flavors[index];
+            flavorDots.forEach(d => d.classList.remove('active'));
+            flavorDots[index].classList.add('active');
+            [productImage, productTag, productHeading, productDesc].forEach(el => {
+                el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'all 0.4s ease';
+            });
+            setTimeout(() => {
+                productImage.src = f.img; productTag.textContent = f.tag;
+                productHeading.innerHTML = f.heading; productDesc.innerHTML = f.desc;
+                [productImage, productTag, productHeading, productDesc].forEach(el => {
+                    el.style.opacity = '1'; el.style.transform = 'translateY(0)';
+                });
+            }, 400);
+        }
+
+        // ── Hero Can Carousel ─────────────────────────────────────────
+        (function () {
+            const cans = Array.from(document.querySelectorAll('.carousel-can'));
+            const dots = Array.from(document.querySelectorAll('.hero-dot'));
+            const TOTAL = cans.length, DWELL = 4000, TRANS = 1900;
+            let current = 0, animating = false, isPaused = false, dwellTimer = null, rafId = null;
+            function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
+            function getArcPts() {
+                const s = Math.max(0.35, Math.min(1.0, window.innerWidth/1440));
+                const ex = 400*s, ey = 420*s;
+                return { exit:[{x:0,y:0},{x:-ex*.2,y:ey*.29},{x:-ex*.55,y:ey*.67},{x:-ex,y:ey}], enter:[{x:ex,y:ey},{x:ex*.55,y:ey*.67},{x:ex*.2,y:ey*.29},{x:0,y:0}] };
+            }
+            function bezier(pts,t) { const u=1-t; return { x:u*u*u*pts[0].x+3*u*u*t*pts[1].x+3*u*t*t*pts[2].x+t*t*t*pts[3].x, y:u*u*u*pts[0].y+3*u*u*t*pts[1].y+3*u*t*t*pts[2].y+t*t*t*pts[3].y }; }
+            function arcProps(t) { return { scale:1-t*.6, opacity:1-t }; }
+            function setCS(el,x,y,sc,op,r) { el.style.transform=`translate(${x}px,${y}px) scale(${sc}) rotate(${r}deg)`; el.style.opacity=op; }
+            function setDot(i) { dots.forEach(d=>d.classList.remove('active')); if(dots[i]) dots[i].classList.add('active'); }
+            function init() { cans.forEach(c=>{c.style.opacity='0';c.style.transform='translate(0,0) scale(1) rotate(0deg)';}); cans[0].style.opacity='1'; setDot(0); }
+            let floatRaf=null, floatStart=null;
+            function startFloat(el) { stopFloat(); floatStart=null; function tick(ts){if(!floatStart)floatStart=ts; const t=((ts-floatStart)%3000)/3000; el.style.transform=`translate(0,${-10*Math.sin(2*Math.PI*t)}px) scale(1) rotate(0deg)`; floatRaf=requestAnimationFrame(tick);} floatRaf=requestAnimationFrame(tick); }
+            function stopFloat() { if(floatRaf){cancelAnimationFrame(floatRaf);floatRaf=null;} }
+            function transition() {
+                if(animating) return; animating=true; stopFloat();
+                const {exit:EP,enter:IP}=getArcPts(), exitCan=cans[current], next=(current+1)%TOTAL, enterCan=cans[next];
+                setCS(enterCan,IP[0].x,IP[0].y,0.4,0,20);
+                let startTs=null;
+                function frame(ts) {
+                    if(!startTs) startTs=ts;
+                    const raw=Math.min((ts-startTs)/TRANS,1), t=easeInOut(raw);
+                    const ep=bezier(EP,t), eP=arcProps(t); setCS(exitCan,ep.x,ep.y,eP.scale,eP.opacity,-t*28);
+                    const ip=bezier(IP,t), iP=arcProps(1-t); setCS(enterCan,ip.x,ip.y,iP.scale,iP.opacity,(1-t)*28);
+                    if(raw<1){rafId=requestAnimationFrame(frame);}else{setCS(exitCan,0,0,1,0,0);setCS(enterCan,0,0,1,1,0);current=next;animating=false;setDot(current);startFloat(enterCan);scheduleDwell();}
+                }
+                rafId=requestAnimationFrame(frame); setDot(next);
+            }
+            function scheduleDwell() { clearTimeout(dwellTimer); if(!isPaused) dwellTimer=setTimeout(transition,DWELL); }
+            const carousel=document.getElementById('heroCarousel');
+            carousel.addEventListener('mouseenter',()=>{isPaused=true;clearTimeout(dwellTimer);});
+            carousel.addEventListener('mouseleave',()=>{isPaused=false;if(!animating)scheduleDwell();});
+            dots.forEach((dot,i)=>dot.addEventListener('click',()=>{if(animating||i===current)return;clearTimeout(dwellTimer);current=(i-1+TOTAL)%TOTAL;transition();}));
+            init(); setTimeout(()=>{startFloat(cans[0]);scheduleDwell();},400);
+        })();
+
+        // ── Mobile Menu ───────────────────────────────────────────────
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks   = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }));
+
+        // ════════════════════════════════════════════════════════════
+        // FULL-SCREEN SNAP SCROLL ENGINE
+        // Sections: 0=Hero  1=Special  2=Reach  3=Campaign  4=Flavors  5=Zero+Footer
+        // ════════════════════════════════════════════════════════════
+        (function () {
+            const sections      = Array.from(document.querySelectorAll('.snap-section'));
+            const TOTAL         = sections.length;
+            const DUR           = 850;
+            const EASE          = 'cubic-bezier(0.77, 0, 0.18, 1)';
+            const SWIPE_MIN     = 50;
+            const WHEEL_THRESH  = 60;
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            let current     = 0;
+            let isAnimating = false;
+            let touchStartY = 0;
+            let wheelAcc    = 0;
+            let wheelTimer  = null;
+            let finishTimer = null;
+
+            // ── Init: place all sections ──────────────────────────────
+            sections.forEach((sec, i) => {
+                sec.style.transition    = 'none';
+                sec.style.transform     = i === 0 ? 'translateY(0)'    : 'translateY(100vh)';
+                sec.style.opacity       = i === 0 ? '1'                : '0';
+                sec.style.pointerEvents = i === 0 ? 'all'              : 'none';
+            });
+
+            // ── Navbar tint ───────────────────────────────────────────
+            function updateNavbar(idx) {
+                navbar.classList.toggle('scrolled', idx > 0);
+            }
+
+            // ── Trigger .reveal animations ────────────────────────────
+            function triggerReveals(sec) {
+                sec.querySelectorAll('.reveal:not(.active)').forEach(el => {
+                    setTimeout(() => el.classList.add('active'), 80);
+                });
+            }
+
+            // ── Core transition ───────────────────────────────────────
+            function goTo(next) {
+                if (isAnimating || next === current || next < 0 || next >= TOTAL) return;
+
+                isAnimating = true;
+                clearTimeout(finishTimer);
+
+                const dir    = next > current ? 1 : -1;
+                const outSec = sections[current];
+                const inSec  = sections[next];
+
+                // ── Step 1: position inSec off-screen, make it visible ──
+                // Setting opacity:1 HERE (before animation) means the section
+                // is always visible even if finish() is delayed — no blank screen.
+                inSec.style.transition    = 'none';
+                inSec.style.transform     = `translateY(${dir * 100}vh)`;
+                inSec.style.opacity       = '1';
+                inSec.style.pointerEvents = 'none';
+
+                // ── Step 2: force reflow so start position is committed ──
+                void inSec.offsetHeight;
+                void outSec.offsetHeight;
+
+                if (reducedMotion) {
+                    outSec.style.transform     = `translateY(${dir * -100}vh)`;
+                    outSec.style.opacity       = '0';
+                    outSec.style.pointerEvents = 'none';
+                    inSec.style.transform      = 'translateY(0)';
+                    inSec.style.pointerEvents  = 'all';
+                    current     = next;
+                    isAnimating = false;
+                    updateNavbar(current);
+                    triggerReveals(inSec);
+                    return;
+                }
+
+                // ── Step 3: apply transition, then animate ───────────────
+                const tv = `transform ${DUR}ms ${EASE}`;
+                outSec.style.transition = tv;
+                inSec.style.transition  = tv;
+
+                // Double rAF: first frame commits the transition property,
+                // second frame starts the actual movement.
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        outSec.style.transform = `translateY(${dir * -100}vh)`;
+                        inSec.style.transform  = 'translateY(0)';
+                    });
+                });
+
+                // ── Step 4: finish after DUR — single timer, no transitionend ──
+                // We deliberately avoid transitionend because it fires on every
+                // child element with a transition, causing multiple finish calls.
+                finishTimer = setTimeout(() => {
+                    outSec.style.transition    = 'none';
+                    inSec.style.transition     = 'none';
+                    outSec.style.opacity       = '0';
+                    outSec.style.pointerEvents = 'none';
+                    inSec.style.opacity        = '1';   // ensure visible
+                    inSec.style.pointerEvents  = 'all';
+                    inSec.style.transform      = 'translateY(0)'; // snap to exact position
+
+                    current     = next;
+                    isAnimating = false;
+                    updateNavbar(current);
+                    triggerReveals(inSec);
+                }, DUR + 50);
+            }
+
+            // ── Wheel ─────────────────────────────────────────────────
+            window.addEventListener('wheel', (e) => {
+                if (isAnimating) { e.preventDefault(); wheelAcc = 0; return; }
+
+                const sec       = sections[current];
+                const ovY       = window.getComputedStyle(sec).overflowY;
+                const scrollable = (ovY === 'auto' || ovY === 'scroll')
+                                   && sec.scrollHeight > sec.clientHeight + 2;
+
+                if (scrollable) {
+                    const atTop    = sec.scrollTop <= 1;
+                    const atBottom = sec.scrollTop + sec.clientHeight >= sec.scrollHeight - 2;
+                    // Not at boundary — let browser scroll the section naturally
+                    if (e.deltaY > 0 && !atBottom) { wheelAcc = 0; return; }
+                    if (e.deltaY < 0 && !atTop)    { wheelAcc = 0; return; }
+                }
+
+                // At boundary or non-scrollable — take over and snap
+                e.preventDefault();
+                wheelAcc += e.deltaY;
+                clearTimeout(wheelTimer);
+                wheelTimer = setTimeout(() => { wheelAcc = 0; }, 200);
+
+                if (Math.abs(wheelAcc) >= WHEEL_THRESH) {
+                    const dir = wheelAcc > 0 ? 1 : -1;
+                    wheelAcc  = 0;
+                    clearTimeout(wheelTimer);
+                    goTo(current + dir);
+                }
+            }, { passive: false });
+
+            // ── Touch ─────────────────────────────────────────────────
+            window.addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            window.addEventListener('touchend', (e) => {
+                if (isAnimating) return;
+                const delta = touchStartY - e.changedTouches[0].clientY;
+                if (Math.abs(delta) < SWIPE_MIN) return;
+                goTo(current + (delta > 0 ? 1 : -1));
+            }, { passive: true });
+
+            // ── Keyboard ──────────────────────────────────────────────
+            window.addEventListener('keydown', (e) => {
+                if (isAnimating) return;
+                switch (e.key) {
+                    case 'ArrowDown': case 'PageDown': e.preventDefault(); goTo(current + 1); break;
+                    case 'ArrowUp':   case 'PageUp':   e.preventDefault(); goTo(current - 1); break;
+                    case 'Home':                       e.preventDefault(); goTo(0);           break;
+                    case 'End':                        e.preventDefault(); goTo(TOTAL - 1);   break;
+                }
+            });
+
+            // ── Nav link clicks ───────────────────────────────────────
+            document.querySelectorAll('a[href="#flavors"], a[href="index.html#flavors"]').forEach(a => {
+                a.addEventListener('click', (e) => { e.preventDefault(); goTo(4); });
+            });
+            document.querySelectorAll('a[href="#zero"]').forEach(a => {
+                a.addEventListener('click', (e) => { e.preventDefault(); goTo(5); });
+            });
+            document.querySelectorAll('a[href="#contact"]').forEach(a => {
+                a.addEventListener('click', (e) => { e.preventDefault(); goTo(5); });
+            });
+
+            // ── Boot ──────────────────────────────────────────────────
+            updateNavbar(0);
+            triggerReveals(sections[0]);
+
+            // ── Hash navigation on page load ──────────────────────────
+            // When arriving from another page via index.html#flavors etc.,
+            // jump instantly to the target section (no animation).
+            (function checkHash() {
+                const hash = window.location.hash;
+                if (!hash) return;
+                const map = { '#flavors': 4, '#zero': 5, '#contact': 5 };
+                const target = map[hash];
+                if (target === undefined || target === 0) return;
+
+                // Instant jump — no slide animation, just show the right section
+                sections.forEach((sec, i) => {
+                    sec.style.transition    = 'none';
+                    sec.style.transform     = 'translateY(0)';
+                    sec.style.opacity       = i === target ? '1' : '0';
+                    sec.style.pointerEvents = i === target ? 'all' : 'none';
+                });
+                current = target;
+                updateNavbar(target);
+                triggerReveals(sections[target]);
+
+                // Clear the hash so back-navigation works cleanly
+                history.replaceState(null, '', window.location.pathname);
+            })();
+        })();
+    </script>
+</body>
+
+</html>

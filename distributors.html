@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributors - Evoca</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/Evoca Logo.png" alt="Evoca Logo" class="logo-img"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#flavors">Flavors</a>
+                <a href="about.html">About Us</a>
+                <a href="distributors.html">Distributors</a>
+                <a href="contact.html">Contact US</a>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#" class="btn btn-primary buy-now">BUY NOW &rarr;</a>
+        </div>
+    </header>
+
+    <header class="page-header">
+        <div class="page-header-container">
+            <h1 class="page-title">Global <span class="highlight-red">Network</span></h1>
+            <p class="page-subtitle">Find Evoca at your favorite retailers and distributors worldwide. We're expanding
+                rapidly to bring the rush to you.</p>
+        </div>
+    </header>
+
+    <section class="distributors-section">
+        <div class="distributor-grid">
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (East Midlands)</span>
+                <h3>Adam's Cash &amp; Carry Ltd</h3>
+                <p>Ivatt Way<br>Westwood Industrial Estate<br>Peterborough PE3 7PH<br><br>Tel: +44 (0)1733 266 666<br>sales@adamscashandcarry.co.uk</p>
+            </div>
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (East London)</span>
+                <h3>DIRECT TRADERS</h3>
+                <p>Storage Solutions<br>Remus Road, Bow<br>London E3 2NF<br><br>Tel: +44 (0)2086386363</p>
+            </div>
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (West Midlands)</span>
+                <h3>Indus Foods Ltd</h3>
+                <p>55-58 Stratford Street<br>North Sparkbrook<br>Birmingham B11 1BU<br><br>Tel: +44 (0)121 771 4330<br>sales@indusfoodsltd.com</p>
+            </div>
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (Midlands &amp; South)</span>
+                <h3>Magna Foodservice Limited</h3>
+                <p>Unit 19-21 Phoenix Distribution Park<br>Phoenix Way, Heston<br>London TW5 9NB<br><br>Tel: +44 (0)208 050 1231<br>info@magnafoodservice.co.uk<br>www.magnafoodservice.co.uk</p>
+            </div>
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (East London)</span>
+                <h3>Supreme Wholesale Ltd</h3>
+                <p>Unit 5K Standard Industrial Estate<br>Henley Road<br>London E16 2ES<br><br>Tel: +44 (0)20 7474 6090</p>
+            </div>
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (South)</span>
+                <h3>Versatile Wholesale</h3>
+                <p>4 Bristol Way<br>Stoke Gardens<br>Slough SL1 3QE<br><br>Tel: +44 (0)203 432 0059<br>sales@versatile-wholesale.co.uk</p>
+            </div>
+
+            <div class="distributor-card">
+                <span class="distributor-tag">Distributor (West London)</span>
+                <h3>Z and H Distribution Ltd</h3>
+                <p>Unit 9B Beaver Industrial Estate<br>Brent Road<br>Southall UB2 5FB<br><br>Tel: +44 (0)20 8561 3213<br>info@zandhdistribution.co.uk</p>
+            </div>
+
+            <div class="distributor-card" style="border-style: dashed; background: transparent;">
+                <span class="distributor-tag" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">Become a Partner</span>
+                <h3>Join the Rush</h3>
+                <p>Want to stock Evoca in your store or join our distribution network?</p>
+                <a href="contact.html" class="btn btn-secondary" style="margin-top: 10px;">Contact Sales</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="assets/Evoca Logo.png" alt="Evoca Logo" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>© 2025 Evoca Drinks.All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="distributors.html">STOCKISTS</a>
+                    <a href="contact.html">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-top" id="scrollTop">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </a>
+
+    <script>
+        const scrollTop = document.getElementById('scrollTop');
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle Logic
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    </script>
+</body>
+
+</html>

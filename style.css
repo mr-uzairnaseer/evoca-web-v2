@@ -1299,6 +1299,7 @@ a {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;
+    margin-top: auto;
 }
 
 .footer-container {
@@ -1319,6 +1320,7 @@ a {
     font-size: 0.85rem;
     color: #5a6c7e;
     font-weight: 500;
+    margin: 0;
 }
 
 .footer-nav {
@@ -1588,7 +1590,7 @@ a {
     }
 
     .footer {
-        padding: 30px 8% 15px;
+        padding: 30px 8% 0;
     }
 
     .footer-container {

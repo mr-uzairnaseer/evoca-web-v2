@@ -745,7 +745,7 @@ a {
     max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.6fr 1fr;
     gap: 120px;
     align-items: center;
 }
@@ -1185,7 +1185,7 @@ a {
 }
 
 .zero-can {
-    height: min(520px, 50vh);
+    height: min(600px, 60vh);
     width: auto;
     filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.9));
     transform: rotate(0deg);
@@ -1518,7 +1518,7 @@ a {
     }
 
     .zero-can {
-        height: 400px;
+        height: 450px;
     }
 
     .zero-heading {

@@ -509,23 +509,27 @@
                     // Sync native scrollbar position without triggering the listener
                     isSyncing = true;
                     window.scrollTo(0, current * window.innerHeight);
-                    setTimeout(() => { isSyncing = false; }, 200);
+                    setTimeout(() => { isSyncing = false; }, 300);
                 }, DUR + 100); 
             }
 
-            // ── Native Scroll Sync ────────────────────────────────────
+            // ── Native Scroll Sync (One-at-a-time) ───────────────────
             let isSyncing = false;
             window.addEventListener('scroll', () => {
                 if (isAnimating || isSyncing || window.innerWidth <= 768) return;
                 
                 const scrollPos = window.scrollY;
-                const targetIdx = Math.round(scrollPos / window.innerHeight);
+                const currentPos = current * window.innerHeight;
+                const diff = scrollPos - currentPos;
                 
-                // Only trigger if we've moved significantly (20% of viewport)
-                const threshold = window.innerHeight * 0.2;
-                if (Math.abs(scrollPos - (current * window.innerHeight)) > threshold) {
-                    if (targetIdx !== current && targetIdx >= 0 && targetIdx < TOTAL) {
-                        goTo(targetIdx);
+                // Trigger if moved 25% of viewport
+                const threshold = window.innerHeight * 0.25;
+                
+                if (Math.abs(diff) > threshold) {
+                    const dir = diff > 0 ? 1 : -1;
+                    const next = current + dir;
+                    if (next >= 0 && next < TOTAL) {
+                        goTo(next);
                     }
                 }
             }, { passive: true });

@@ -218,22 +218,31 @@ body {
     position: relative;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar (Global) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #2a3a5a transparent;
+}
+
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-dark);
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #2a3a5a;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-red);
+    background-clip: content-box;
 }
 
 
@@ -670,7 +679,7 @@ a {
 /* Campaign Visual System Section */
 .campaign-system {
     height: 100%;
-    padding: 20px 8%;
+    padding: 30px 8% 10px;
     position: relative;
     overflow: hidden;
     display: flex;

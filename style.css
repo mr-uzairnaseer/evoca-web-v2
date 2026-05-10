@@ -746,7 +746,7 @@ a {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.8fr 1fr;
-    gap: 100px;
+    gap: 160px;
     align-items: center;
 }
 

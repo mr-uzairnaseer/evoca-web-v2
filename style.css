@@ -1,11 +1,6 @@
 html.snap-page {
     scroll-snap-type: none;
-    overflow: hidden !important;
-}
-
-html.snap-page body {
-    height: 100vh !important;
-    overflow: hidden !important;
+    overflow: hidden;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -208,49 +203,6 @@ html {
     box-sizing: border-box;
 }
 
-/* Custom Premium Scrollbar Component */
-.custom-scrollbar-area {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 14px;
-    height: 100vh;
-    z-index: 9999;
-    background: var(--bg-dark);
-}
-
-.custom-scrollbar-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.custom-scrollbar-thumb {
-    position: absolute;
-    top: 0;
-    left: 4px;
-    width: 6px;
-    height: 0; /* Set via JS */
-    background: #1a2a4a;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s ease, width 0.3s ease, left 0.3s ease;
-}
-
-.custom-scrollbar-thumb:hover, .custom-scrollbar-thumb.dragging {
-    background: var(--primary-red);
-    width: 8px;
-    left: 3px;
-}
-
-/* Hide native scrollbar everywhere */
-::-webkit-scrollbar {
-    display: none;
-}
-* {
-    scrollbar-width: none;
-}
-
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
@@ -266,13 +218,63 @@ body {
     position: relative;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
 
+::-webkit-scrollbar-thumb {
+    background: #2a3a5a;
+    border-radius: 10px;
+}
 
-/* Firefox Scrollbar Support */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #1a2a4a var(--bg-dark);
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-red);
+}
+
+/* Section Scrollbar — custom indicator for snap-scroll pages */
+.section-scrollbar {
+    position: fixed;
+    right: 2px;
+    top: 0;
+    height: 100vh;
+    width: 8px;
+    z-index: 999;
+    padding: 4px 0;
+    box-sizing: border-box;
+}
+
+.section-scrollbar .sb-track {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.section-scrollbar .sb-thumb {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-radius: 4px;
+    background: #2a3a5a;
+    transition: top 0.85s cubic-bezier(0.77, 0, 0.18, 1), background 0.3s ease;
+    cursor: pointer;
+}
+
+.section-scrollbar .sb-thumb:hover {
+    background: var(--primary-red);
+}
+
+@media (max-width: 768px) {
+    .section-scrollbar {
+        display: none;
+    }
 }
 
 

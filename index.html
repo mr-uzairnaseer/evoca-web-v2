@@ -274,11 +274,10 @@
     </a>
 
     </div><!-- /#snapContainer -->
-    
-    <!-- Custom Premium Scrollbar Component -->
-    <div class="custom-scrollbar-area">
-        <div class="custom-scrollbar-track">
-            <div class="custom-scrollbar-thumb" id="scrollThumb"></div>
+
+    <div class="section-scrollbar" id="sectionScrollbar">
+        <div class="sb-track" id="sbTrack">
+            <div class="sb-thumb" id="sbThumb"></div>
         </div>
     </div>
 
@@ -421,11 +420,6 @@
                 sec.style.pointerEvents = i === 0 ? 'all'              : 'none';
             });
 
-            // Sync scrollbar to top on load
-            if (window.innerWidth > 768) {
-                window.scrollTo(0, 0);
-            }
-
             // ── Scroll to Top button ─────────────────────────────────
             const scrollTop = document.getElementById('scrollTop');
             scrollTop.addEventListener('click', (e) => {
@@ -437,6 +431,23 @@
             function updateNavbar(idx) {
                 navbar.classList.toggle('scrolled', idx > 0);
                 scrollTop.classList.toggle('visible', idx > 0);
+            }
+
+            // ── Custom Scrollbar ──────────────────────────────────────
+            const sbThumb = document.getElementById('sbThumb');
+            const sbTrack = document.getElementById('sbTrack');
+            function updateScrollbar(idx) {
+                if (!sbThumb) return;
+                const pct = 100 / TOTAL;
+                sbThumb.style.height = pct + '%';
+                sbThumb.style.top = (idx * pct) + '%';
+            }
+            if (sbTrack) {
+                sbTrack.addEventListener('click', (e) => {
+                    const rect = sbTrack.getBoundingClientRect();
+                    const y = (e.clientY - rect.top) / rect.height;
+                    goTo(Math.min(Math.floor(y * TOTAL), TOTAL - 1));
+                });
             }
 
             // ── Trigger .reveal animations ────────────────────────────
@@ -478,6 +489,7 @@
                     current     = next;
                     isAnimating = false;
                     updateNavbar(current);
+                    updateScrollbar(current);
                     triggerReveals(inSec);
                     return;
                 }
@@ -511,65 +523,10 @@
                     current     = next;
                     isAnimating = false;
                     updateNavbar(current);
+                    updateScrollbar(current);
                     triggerReveals(inSec);
-                    updateScrollbar();
-                }, DUR + 100); 
+                }, DUR + 500); // Increased cooldown from 50ms to 500ms to prevent momentum-based double-triggering
             }
-
-            // ── Custom Scrollbar Logic ────────────────────────────────
-            const thumb = document.getElementById('scrollThumb');
-            const track = document.querySelector('.custom-scrollbar-track');
-            
-            function updateScrollbar() {
-                const thumbHeight = (1 / TOTAL) * 100;
-                const thumbTop = (current / TOTAL) * 100;
-                thumb.style.height = thumbHeight + '%';
-                thumb.style.top = thumbTop + '%';
-            }
-
-            // Click on track to jump
-            track.addEventListener('click', (e) => {
-                if (isAnimating || e.target === thumb) return;
-                const rect = track.getBoundingClientRect();
-                const clickY = e.clientY - rect.top;
-                const clickedIdx = Math.floor((clickY / rect.height) * TOTAL);
-                if (clickedIdx !== current) goTo(clickedIdx);
-            });
-
-            // Dragging thumb
-            let isDragging = false;
-            let startY = 0;
-            let startIdx = 0;
-
-            thumb.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startY = e.clientY;
-                startIdx = current;
-                thumb.classList.add('dragging');
-                document.body.style.userSelect = 'none';
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                if (!isDragging || isAnimating) return;
-                const deltaY = e.clientY - startY;
-                const trackHeight = track.offsetHeight;
-                const sectionHeight = trackHeight / TOTAL;
-                const moveIdx = Math.round(deltaY / sectionHeight);
-                const targetIdx = Math.max(0, Math.min(TOTAL - 1, startIdx + moveIdx));
-                
-                if (targetIdx !== current) {
-                    goTo(targetIdx);
-                }
-            });
-
-            window.addEventListener('mouseup', () => {
-                isDragging = false;
-                thumb.classList.remove('dragging');
-                document.body.style.userSelect = '';
-            });
-
-            updateScrollbar();
-            window.addEventListener('resize', updateScrollbar);
 
             // ── Wheel ─────────────────────────────────────────────────
             window.addEventListener('wheel', (e) => {
@@ -638,6 +595,7 @@
 
             // ── Boot ──────────────────────────────────────────────────
             updateNavbar(0);
+            updateScrollbar(0);
             triggerReveals(sections[0]);
 
             // ── Hash navigation on page load ──────────────────────────
@@ -659,6 +617,7 @@
                 });
                 current = target;
                 updateNavbar(target);
+                updateScrollbar(target);
                 triggerReveals(sections[target]);
 
                 // Clear the hash so back-navigation works cleanly

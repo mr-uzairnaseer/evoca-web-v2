@@ -1175,7 +1175,7 @@ a {
 /* Zero Section */
 .zero-section {
     position: relative;
-    padding: 20px 8% 20px;
+    padding: 20px 8% 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1253,7 +1253,7 @@ a {
 
 /* Footer Styles */
 .footer {
-    padding: 20px 8%;
+    padding: 20px 8% 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
     scroll-snap-align: end;
@@ -1527,7 +1527,7 @@ a {
     }
 
     .footer {
-        padding: 20px 8%;
+        padding: 20px 8% 5px;
     }
 
     .footer-container {
@@ -2675,7 +2675,7 @@ a {
 
     /* ── Footer ── */
     .footer {
-        padding: 15px 5%;
+        padding: 15px 5% 5px;
     }
 
     .footer-container {
@@ -2875,7 +2875,7 @@ a {
 
     .footer {
         padding-top: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 5px;
     }
 
     /* ── Distributors & Contact page header ── */

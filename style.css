@@ -1,11 +1,11 @@
 html.snap-page {
     scroll-snap-type: none;
-    overflow-x: hidden;
-    overflow-y: auto !important;
+    overflow: hidden !important;
 }
 
 html.snap-page body {
-    height: 600vh !important;
+    height: 100vh !important;
+    overflow: hidden !important;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -208,6 +208,49 @@ html {
     box-sizing: border-box;
 }
 
+/* Custom Premium Scrollbar Component */
+.custom-scrollbar-area {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 14px;
+    height: 100vh;
+    z-index: 9999;
+    background: var(--bg-dark);
+}
+
+.custom-scrollbar-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 6px;
+    height: 0; /* Set via JS */
+    background: #1a2a4a;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, width 0.3s ease, left 0.3s ease;
+}
+
+.custom-scrollbar-thumb:hover, .custom-scrollbar-thumb.dragging {
+    background: var(--primary-red);
+    width: 8px;
+    left: 3px;
+}
+
+/* Hide native scrollbar everywhere */
+::-webkit-scrollbar {
+    display: none;
+}
+* {
+    scrollbar-width: none;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
@@ -223,25 +266,8 @@ body {
     position: relative;
 }
 
-/* Premium Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 14px;
-}
 
-::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-}
 
-::-webkit-scrollbar-thumb {
-    background: #1a2a4a;
-    border-radius: 20px;
-    border: 4px solid var(--bg-dark);
-    transition: background 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-red);
-}
 
 /* Firefox Scrollbar Support */
 * {

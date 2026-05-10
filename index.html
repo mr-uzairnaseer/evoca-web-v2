@@ -274,6 +274,13 @@
     </a>
 
     </div><!-- /#snapContainer -->
+    
+    <!-- Custom Premium Scrollbar Component -->
+    <div class="custom-scrollbar-area">
+        <div class="custom-scrollbar-track">
+            <div class="custom-scrollbar-thumb" id="scrollThumb"></div>
+        </div>
+    </div>
 
     <script>
         // ── Navbar scroll tint ────────────────────────────────────────
@@ -505,34 +512,64 @@
                     isAnimating = false;
                     updateNavbar(current);
                     triggerReveals(inSec);
-
-                    // Sync native scrollbar position without triggering the listener
-                    isSyncing = true;
-                    window.scrollTo(0, current * window.innerHeight);
-                    setTimeout(() => { isSyncing = false; }, 300);
+                    updateScrollbar();
                 }, DUR + 100); 
             }
 
-            // ── Native Scroll Sync (One-at-a-time) ───────────────────
-            let isSyncing = false;
-            window.addEventListener('scroll', () => {
-                if (isAnimating || isSyncing || window.innerWidth <= 768) return;
+            // ── Custom Scrollbar Logic ────────────────────────────────
+            const thumb = document.getElementById('scrollThumb');
+            const track = document.querySelector('.custom-scrollbar-track');
+            
+            function updateScrollbar() {
+                const thumbHeight = (1 / TOTAL) * 100;
+                const thumbTop = (current / TOTAL) * 100;
+                thumb.style.height = thumbHeight + '%';
+                thumb.style.top = thumbTop + '%';
+            }
+
+            // Click on track to jump
+            track.addEventListener('click', (e) => {
+                if (isAnimating || e.target === thumb) return;
+                const rect = track.getBoundingClientRect();
+                const clickY = e.clientY - rect.top;
+                const clickedIdx = Math.floor((clickY / rect.height) * TOTAL);
+                if (clickedIdx !== current) goTo(clickedIdx);
+            });
+
+            // Dragging thumb
+            let isDragging = false;
+            let startY = 0;
+            let startIdx = 0;
+
+            thumb.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startY = e.clientY;
+                startIdx = current;
+                thumb.classList.add('dragging');
+                document.body.style.userSelect = 'none';
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging || isAnimating) return;
+                const deltaY = e.clientY - startY;
+                const trackHeight = track.offsetHeight;
+                const sectionHeight = trackHeight / TOTAL;
+                const moveIdx = Math.round(deltaY / sectionHeight);
+                const targetIdx = Math.max(0, Math.min(TOTAL - 1, startIdx + moveIdx));
                 
-                const scrollPos = window.scrollY;
-                const currentPos = current * window.innerHeight;
-                const diff = scrollPos - currentPos;
-                
-                // Trigger if moved 25% of viewport
-                const threshold = window.innerHeight * 0.25;
-                
-                if (Math.abs(diff) > threshold) {
-                    const dir = diff > 0 ? 1 : -1;
-                    const next = current + dir;
-                    if (next >= 0 && next < TOTAL) {
-                        goTo(next);
-                    }
+                if (targetIdx !== current) {
+                    goTo(targetIdx);
                 }
-            }, { passive: true });
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+                thumb.classList.remove('dragging');
+                document.body.style.userSelect = '';
+            });
+
+            updateScrollbar();
+            window.addEventListener('resize', updateScrollbar);
 
             // ── Wheel ─────────────────────────────────────────────────
             window.addEventListener('wheel', (e) => {
